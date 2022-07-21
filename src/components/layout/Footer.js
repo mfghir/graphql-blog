@@ -13,7 +13,7 @@ const Footer = () => {
         textAlign="center"
         mt={10}
       >
-        پروژه وبلاگ با GraphQL |  سایت mfgh.ir
+        پروژه وبلاگ با GraphQL | سایت mfgh.ir
       </Typography>
     </footer>
   );
