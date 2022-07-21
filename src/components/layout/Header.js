@@ -7,7 +7,7 @@ const Header = () => {
     <AppBar position="sticky">
       <Container maxWidth="lg">
         <Toolbar>
-          <Typography variant="h5" component="h1" fontWeight="bold" flex={1}>
+          <Typography variant="h5" component="h1" fontWeight="700" flex={1}>
             وبلاگ mfgh.ir
           </Typography>
 
