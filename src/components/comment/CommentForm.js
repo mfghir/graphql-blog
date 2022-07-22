@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import { useMutation } from "@apollo/client";
+
 import { SEND_COMMENT } from "../../graphql/mutations";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,8 +10,8 @@ function CommentForm({ slug }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [text, setText] = useState("");
-  const [pressed, setPressed] = useState(false);
 
+  const [pressed, setPressed] = useState(false);
   const [sendComment, { loading, data }] = useMutation(SEND_COMMENT, {
     variables: { name, email, text, slug },
   });
@@ -48,6 +49,7 @@ function CommentForm({ slug }) {
           فرم ارسال کامنت
         </Typography>
       </Grid>
+
       <Grid item xs={12} m={2}>
         <TextField
           label="نام کاربری"
@@ -57,6 +59,7 @@ function CommentForm({ slug }) {
           onChange={(e) => setName(e.target.value)}
         />
       </Grid>
+
       <Grid item xs={12} m={2}>
         <TextField
           label="ایمیل"
@@ -66,6 +69,7 @@ function CommentForm({ slug }) {
           onChange={(e) => setEmail(e.target.value)}
         />
       </Grid>
+
       <Grid item xs={12} m={2}>
         <TextField
           label="متن کامنت"
@@ -77,6 +81,7 @@ function CommentForm({ slug }) {
           minRows={4}
         />
       </Grid>
+
       <Grid item xs={12} m={2}>
         {loading ? (
           <Button variant="contained" disabled>
@@ -88,6 +93,7 @@ function CommentForm({ slug }) {
           </Button>
         )}
       </Grid>
+
       <ToastContainer />
     </Grid>
   );

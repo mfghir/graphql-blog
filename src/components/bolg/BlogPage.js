@@ -10,6 +10,9 @@ import { Container } from "@mui/system";
 import { Avatar, Box, Grid, Typography } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 
+import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
+
 const BlogPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -24,7 +27,7 @@ const BlogPage = () => {
   return (
     <Container maxWidth="lg">
       <Grid container>
-
+        
         <Grid item xs={12} mt={9} display="flex" justifyContent="space-between">
           <Typography
             component="h2"
@@ -70,10 +73,10 @@ const BlogPage = () => {
         </Grid>
 
         <Grid item xs={12}>
-          
+          <CommentForm slug={slug} />
         </Grid>
         <Grid item xs={12}>
-          
+          <Comments slug={slug} />
         </Grid>
 
       </Grid>
