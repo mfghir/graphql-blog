@@ -7,6 +7,7 @@ import { Avatar, Container, Grid, Typography } from "@mui/material";
 import CardEL from "../shared/CardEL";
 
 import sanitizeHtml from "sanitize-html";
+import Loader from "../shared/Loader";
 
 const AuthorPage = () => {
 
@@ -16,7 +17,7 @@ const AuthorPage = () => {
   });
 
 
-  if (loading) return <h3>Loading ...</h3>;
+  if (loading) return <Loader />
   if (errors) return <h3>Error...</h3>;
   console.log(data);
 
@@ -66,7 +67,7 @@ const AuthorPage = () => {
               </Grid>
             ))}
           </Grid>
-          
+
         </Grid>
 
       </Grid>
